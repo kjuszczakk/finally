@@ -1,0 +1,10 @@
+int odwroc (int liczba)
+{
+int nowa=0;
+while(liczba>0)
+{
+nowa=10*nowa+liczba%10;
+liczba=liczba/10;
+}
+return nowa;
+}

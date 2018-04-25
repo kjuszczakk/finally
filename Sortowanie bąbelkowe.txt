@@ -1,5 +1,5 @@
 #include <iostream>
-
+Wprowadzone zmiany Jacek
 void sortowanie_babelkowe(int *tab, int n)
 {
     for(int i=1; i<n; i++)

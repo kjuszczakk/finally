@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <conio.h>
+#define NM 100
+int a[NM], n;
+/* Deklaracja funkcji */
+void sort (int *a);
+void dane();
+void wyniki();
+/* Program glowny */
+void main()
+{
+dane();
+printf("\nWprowadzono: \n");
+wyniki();
+sort(a);
+printf("\n\nPo sortowaniu\n ");
+wyniki();
+getch();
+} {main}
+/* Definicja funkcji */
+void sort (int *a)
+{
+int i, j, iw, temp;
+for(i=1, iw=i; i<=n; i++)
+for (j=n; j>=iw; j--)
+if ( a[j] < a[j-1] )
+{ temp=a[j];
+a[j]=a[j-1];
+a[j-1]=temp;
+iw=j-1;
+}
+}
+void dane()
+{
+int i;
+clrscr();
+printf("Ilosc elementow tablicy ");
+scanf("%d",&n);
+if (n> NM)
+n=NM;
+for (i=1; i<=n; i++)
+{
+printf("\n a[%d] ",i);
+scanf("%d",&a[i]);
+/*printf("\ni=%d a=%d",i,a[i]); */
+}
+}
+void wyniki()
+{
+int i;
+printf("\nWyniki\n");
+for (i=1; i<=n; i++)
+printf("\n%d %d",i, a[i]);
+}
+/* Koni

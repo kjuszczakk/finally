@@ -16,7 +16,7 @@ scanf("%s",nazwa_wyn);
 /* plik_wy = fopen("wyniki.103","w"); */
 plik_wy = fopen(nazwa_wyn,"w");
 fprintf(plik_wy,"\n-------------------------------------");
-fprintf(plik_wy,"\n Predkosc [km/h] Predkosc [m/s] ");
+fprintf(plik_wy,"\n Predkosc [m/s] Predkosc [m/s] ");
 fprintf(plik_wy,"\n-------------------------------------");
 v = VPOCZ;
 while ( v <= VKONC )

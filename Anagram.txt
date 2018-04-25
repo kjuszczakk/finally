@@ -1,8 +1,13 @@
 Pierwsza zmiana
 
 #include <iostream>
+<<<<<<< HEAD
+#include <fstream>
+#include <string>
+=======
 #include <fstream> coś tutaj zmieniłem - Jacek
 #include <cstring>
+>>>>>>> 66da0fc42656b4f06293512f7bb65213d7b60732
 
 using namespace std;
 

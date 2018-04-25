@@ -1,4 +1,4 @@
-8aefqa
+8aefqafefef
 #include <iostream>
 
 void quicksort(int *tablica, int lewy, int prawy)

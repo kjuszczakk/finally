@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 #include <iostream>
 Wprowadzone zmiany Jacek
+=======
+#include <algorithm>
+
+>>>>>>> b776db91f7fb6e9a87b54bce49f230d589c7deec
 void sortowanie_babelkowe(int *tab, int n)
 {
     for(int i=1; i<n; i++)

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <conio.h>
-#define NM 100
+#define NM 10
 int a[NM], n;
 /* Deklaracja funkcji */
 void sort (int *a);

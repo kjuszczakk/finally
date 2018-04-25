@@ -8,7 +8,7 @@ void main() /* zapis wynikow do pliku */
 FILE *plik_wy;
 int v;
 float vm;
-char nazwa_wyn[50];
+char nazwa_wyn[50];s
 clrscr();
 printf("\nPodaj nazwe pliku wynikow: ");
 scanf("%s",nazwa_wyn);

@@ -1,4 +1,4 @@
-int odwroc (int liczba)
+int odwroc (int liczbaaa)
 {
 int nowa=0;
 while(liczba>0)

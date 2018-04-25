@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <conio.h>
-#define max 100 /* max rozmiar tablicy */
+#define max 10 /* max rozmiar tablicy */
 int n,i,j;
 float x;
 float t[max];

@@ -1,5 +1,5 @@
 Druga zmiana
-
+22
 int odwroc (int liczba)
 {
 int nowa=0;

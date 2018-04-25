@@ -1,3 +1,5 @@
+Pierwsza zmiana
+
 #include <iostream>
 #include <fstream> coś tutaj zmieniłem - Jacek
 #include <cstring>

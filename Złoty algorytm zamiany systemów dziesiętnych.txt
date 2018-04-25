@@ -1,3 +1,4 @@
+fwfwefafafaw252151125
 int zsystemu(string s, int b)
 { 
 int wynik=0,i=0, znak=1;

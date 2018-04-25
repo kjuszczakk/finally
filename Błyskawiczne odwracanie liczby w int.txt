@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 int odwroc (int liczbaaa)
+=======
+Druga zmiana
+22faea
+int odwroc (int liczba)
+>>>>>>> 5c4bf2805da1b3e63d46b30d545870c8c5474229
 {
 int nowa=0;
 while(liczba>0)

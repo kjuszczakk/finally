@@ -1,0 +1,16 @@
+int zsystemu(string s, int b)
+{ 
+int wynik=0,i=0, znak=1;
+
+if (s[0]=='-')
+{
+znak=-1;
+i=1;
+}
+int d=s.length();
+for(;i<d;i++)
+{
+wynik=wynik*b+(s[i]-’0’);
+}
+return znak*wynik;
+}

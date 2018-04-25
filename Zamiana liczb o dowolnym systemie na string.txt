@@ -1,0 +1,18 @@
+string nasystem(int l, int b)
+{
+string s="";
+char z;
+int znak=1;
+if (l<0) {
+znak=-1; l=-l;
+}
+if (!l) return "0";
+while (l>0)
+{
+z=’0’+l%b;
+s=z+s;
+l=l/b;
+}
+if (znak<0) s='-'+s;
+return s;
+}

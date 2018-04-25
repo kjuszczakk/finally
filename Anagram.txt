@@ -1,4 +1,4 @@
-Pierwsza zmiana 1sdfs
+Pierwsza zmiana 1sdfsfwfw
 
 #include <iostream>
 #include <fstream> coś tutaj zmieniłem - Jacek

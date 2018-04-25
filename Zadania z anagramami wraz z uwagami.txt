@@ -1,0 +1,108 @@
+#include <iostream>
+#include <fstream>
+#include <cstring>
+
+using namespace std;
+
+bool anag(string s1,string s2)
+{
+    short n,i,m;
+    bool a;
+    string s3;
+    n=s1.length();
+    a=true;
+    for(i=0;i<n;i++)
+    {
+        s3=s1[i];
+        m=s2.find(s3);
+        if(m==-1)
+            a=false;
+        else
+            s2.erase(m,1);
+    }
+    if(s2.length()!=0)
+        a=false;
+    return a;
+}
+
+void punkt_a()
+{
+    ifstream f1; //do odczytu
+    ofstream f2; //do zapisu
+    string s,pom;
+    int d[5],i,n;
+    f1.open("anagram.txt",ios::in);
+    f2.open("odp_4a.txt",ios::out);
+    while (!f1.eof())
+    {
+        getline(f1,s);
+        pom=s;
+        for (i=0;i<4;i++)
+        {
+            n=pom.find(' '); //jest to metoda find na obiekcie pom, zwraca indeks wystąpienia danej rzeczy // dlugosc danego wyrazu dobra sztuczka
+            d[i]=n;
+            pom.erase(0,n+1); // usuwa z pom pewien lancuch znakow 1 liczba to indeks poczatku, druga to ilosc usuwanych
+        }
+        d[4]=pom.length();
+        n=1; //zmienna sygnalizacyjana sugeruje, ze wszystkieelementy sa rowne
+        for (i=1;i<5;i++)
+            if (d[0]!=d[i]) n=0;
+        if(n==1) f2<<s<<endl;
+    }
+    cout<<"Pomyslnie wykonano punkt a..."<<endl;
+    system("PAUSE");
+    f1.close();
+    f2.close();
+    return;
+}
+void punkt_b()
+{
+    ifstream f1; //do odczytu
+    ofstream f2; //do zapisu
+    string s,pom,d[5];
+    int i,n;
+    f1.open("anagram.txt",ios::in);
+    f2.open("odp_4b.txt",ios::out);
+    while (!f1.eof())
+    {
+        getline(f1,s);
+        pom=s;
+        for (i=0;i<4;i++)
+        {
+            n=pom.find(' '); // dlugosc wyrazu
+            d[i]=pom.substr(0,n); // kopiuje ciag z lancuchu pom pierwsza liczba indeks druga to liczba
+            pom.erase(0,n+1);
+        }
+        d[4]=pom;
+        n=1;
+        for (i=1;i<5;i++)
+            if (!anag(d[0],d[i])) n=0;
+        if(n==1) f2<<s<<endl;
+        cout<<"Pomyslnie wykonano punkt b..."<<endl;
+        system("PAUSE");
+        f1.close();
+        f2.close();
+        return;
+    }
+}
+
+int main()
+{
+    system("CLS");
+    punkt_a();
+    punkt_b();
+    return 0;
+}
+
+/* 
+Pozostałe informacje:
+
+Chcesz wczytać konkretną linięz z kodu (np. siódmą)?
+
+Użyj funkcji
+numer=1;
+while(getline(plik,linia))
+{
+if (numer=7) t=linia;
+numer++;
+}

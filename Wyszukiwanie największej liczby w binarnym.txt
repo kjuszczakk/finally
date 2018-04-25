@@ -1,0 +1,44 @@
+#include <iostream>
+#include <fstream>
+#include <string.h>
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+    char najw[251],najm[251],pom[251];
+	ifstream f1;
+	int imax=1,imin=1,i=1;
+	f1.open("liczby.txt", ios::in);
+	f1>>pom;
+	strcpy(najw,pom);
+	strcpy(najm,pom);
+	while (!f1.eof()) {
+		f1>>pom;
+		i++;
+		if (strlen(pom)>strlen(najw)) {
+			strcpy(najw,pom);
+			imax=i;
+		} else if (strlen(pom)==strlen(najw)) {
+				if (strcmp(pom,najw)>0) {
+					strcpy(najw,pom);
+					imax=i;
+				}
+		};
+		if (strlen(pom)<strlen(najm)) {
+			strcpy(najm,pom);
+			imin=i;
+		} else if (strlen(pom)==strlen(najm)) {
+				if (strcmp(pom,najm)<0) {
+					strcpy(najm,pom);
+					imin=i;
+				}
+		}
+	}
+	f1.close();
+	cout<<"Liczba najmniejsza - wiersz nr "<<imin<<endl;
+	cout<<"Liczba najwieksza - wiersz nr "<<imax<<endl<<endl;
+	system("PAUSE");
+    return 0;
+}

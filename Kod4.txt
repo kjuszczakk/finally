@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <conio.h>
+#define max 100 /* max rozmiar tablicy */
+int n,i,j;
+float x;
+float t[max];
+void main (void)
+{
+clrscr();
+printf("===== Program S.C ============= \n");
+printf("\nSortowanie przez wstawianie");
+printf("\n\nWprowadz ilosc liczb < %i : ",max);
+scanf("%i",&n);
+printf("\nWprowadz kolejne liczby : \n");
+for (i=1; i<=n; i++)
+{
+printf("%i " ,i);
+scanf(" %f",&t[i]);
+}
+printf("\nPrzed sortowaniem: \n");
+for (i=1; i<=n; i++)
+{
+printf("\n%i %f",i,t[i]);
+}
+printf("\n");
+for (i=2; i<=n; i++)
+{
+x=t[i];
+t[0]=x;
+j=i-1;
+while (x<t[j])
+{
+t[j+1]=t[j];
+j=j-1;
+} /* while */
+t[j+1]=x;
+}; /* for */
+printf("\nPo sortowaniu");
+for (i=1; i<=n; i++)
+{
+printf("\n%i %f",i,t[i]);
+}
+printf("\n\nNacisnij cos ");
+getch();
+clrscr();
+} /* sortowanie przez wstawianie */

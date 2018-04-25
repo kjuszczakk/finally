@@ -1,0 +1,49 @@
+#include "stdio.h"
+#include <process.h>
+#include <string.h>
+#include <conio.h>
+#include <ctype.h> /* wymaga funkcja touuper() */
+void main()
+{
+FILE *fp; /* deklaracja zmiennej plikowej */
+char name[20]; /* nazwa towaru */
+int quantity;
+float cost;
+clrscr();
+/* Zapis do pliku MYFILE */
+if((fp = fopen("MYFILE","w"))==NULL)
+{
+puts("Nie moge otworzyc pliku");
+exit(1);
+}
+printf("Podaj nazwe produktu (K - koniec): ");
+scanf("%s",name); /* nazwa produktu */
+while ( (strlen(name)>1) && (toupper(name[1]) !='K') )
+{
+printf("Cena: ");
+scanf("%f", &cost);
+printf("Ilosc: ");
+scanf("%d", &quantity);
+fprintf(fp, "%s %f %d\n", name, cost, quantity);
+printf("Nazwa (K - Koniec) : ");
+/* gets(name); */
+scanf("%s",name);
+/* if ((toupper(name[1])=='K') && (strlen(name)==1)) break; */
+}
+fclose(fp);
+/* Odczyt z pliku MYFILE */
+if((fp = fopen("MYFILE","r"))==NULL)
+{
+puts("Nie moge otworzyc pliku");
+exit();
+}
+while(fscanf(fp,"%s %f %d", name, &cost, &quantity) != EOF)
+{
+printf("Produkt: %s\n", name);
+printf("Cena: %.2f\n", cost);
+printf("Ilosc: %d\n", quantity);
+}
+fclose(fp);
+puts("\nNacisnij cos by wyjsc z programu");
+getch();
+}

@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <conio.h>
+#define VPOCZ 200
+#define VKONC 300
+#define KROK 10
+void main() /* zapis wynikow do pliku */
+{
+FILE *plik_wy;
+int v;
+float vm;
+char nazwa_wyn[50];
+clrscr();
+printf("\nPodaj nazwe pliku wynikow: ");
+scanf("%s",nazwa_wyn);
+/* plik_wy = fopen("wyniki.103","w"); */
+plik_wy = fopen(nazwa_wyn,"w");
+fprintf(plik_wy,"\n-------------------------------------");
+fprintf(plik_wy,"\n Predkosc [km/h] Predkosc [m/s] ");
+fprintf(plik_wy,"\n-------------------------------------");
+v = VPOCZ;
+while ( v <= VKONC )
+{
+vm = v / 3.6 ;
+fprintf(plik_wy,"\n %3i %6.2f", v, vm);
+v += KROK;
+}
+fprintf(plik_wy,"\n-------------------------------------");
+fclose(plik_wy);
+}

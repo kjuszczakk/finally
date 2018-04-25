@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <conio.h>
-#define VPOCZ 2000
+#define VPOCZ 20000
 #define VKONC 300
 #define KROK 10
 void main() /* zapis wynikow do pliku */

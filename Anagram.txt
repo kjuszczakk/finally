@@ -1,0 +1,26 @@
+#include <iostream>
+#include <fstream>
+#include <cstring>
+
+using namespace std;
+
+bool anag(string s1,string s2)
+{
+    int n,i,m;
+    bool a;
+    string s3;
+    n=s1.length();
+    a=true;
+    for(i=0;i<n;i++)
+    {
+        s3=s1[i];
+        m=s2.find(s3);
+        if(m==-1)
+            a=false;
+        else
+            s2.erase(m,1);
+    }
+    if(s2.length()!=0)
+        a=false;
+    return a;
+}
